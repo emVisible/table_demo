@@ -59,14 +59,14 @@ export default function Home() {
     const { attachment } = record;
     const AttachmentWrap = (props: Record<"text", string>) => {
       const { text } = props;
-      return <div className="flex px-[8.5rem] py-4 hover:border-l-4">{text}</div>;
+      return (
+        <div className="flex px-[8.5rem] py-4 hover:border-l-4">{text}</div>
+      );
     };
-    console.log("record", record);
     return (
       <div className="flex flex-col ">
         {attachment && attachment.length !== 0 ? (
           attachment.map((attachment) => {
-            console.log("attachment", attachment);
             return <AttachmentWrap text={attachment}></AttachmentWrap>;
           })
         ) : (
@@ -89,9 +89,6 @@ export default function Home() {
             <div
               className="absolute h-full left-0 top-0 w-screen cursor-pointer z-40"
               onClick={(e) => {
-                console.log("expanded", expanded);
-                console.log("onExpand", onExpand);
-                console.log("record", record);
                 onExpand(record, e);
               }}
             ></div>
