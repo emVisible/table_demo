@@ -66,8 +66,8 @@ export default function Home() {
     return (
       <div className="flex flex-col ">
         {attachment && attachment.length !== 0 ? (
-          attachment.map((attachment) => {
-            return <AttachmentWrap text={attachment}></AttachmentWrap>;
+          attachment.map((attachment, index) => {
+            return <AttachmentWrap key={`attachment${index}`} text={attachment}></AttachmentWrap>;
           })
         ) : (
           <AttachmentWrap text={"无附件"}></AttachmentWrap>
